@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class UserService {
 
-  private url = 'http://jsonplaceholder.typicode.com/';
+  private url = 'https://jsonplaceholder.typicode.com/';
 
   constructor(private _http: Http) { }
 
