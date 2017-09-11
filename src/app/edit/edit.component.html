@@ -1,0 +1,47 @@
+<div>
+  <md-card>
+    <md-card-title>User information</md-card-title>
+    <md-card-content>
+      <form [formGroup]="editForm" (ngSubmit)="saveUser(user)">
+        <md-input-container [ngClass]="{'error': editForm.controls['name'].errors && !editForm.controls['name'].pristine}">
+          <input id="name" type="text" mdInput [(ngModel)]="user.name" formControlName="name" placeholder="User Name">
+          <div *ngIf="editForm.controls['name'].errors && !editForm.controls['name'].pristine" class="error-msg">
+            <div [hidden]="!editForm.controls['name'].errors.required">Email is required.</div>
+            <div [hidden]="!editForm.controls['name'].errors.patternInvalid">Email is invalid.</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container [ngClass]="{'error': editForm.controls['email'].errors && !editForm.controls['email'].pristine}">
+          <input id="email" type="email" mdInput [(ngModel)]="user.email" formControlName="email" placeholder="User Email">
+          <div *ngIf="editForm.controls['email'].errors && !editForm.controls['email'].pristine" class="error-msg">
+            <div [hidden]="!editForm.controls['email'].errors.required">Email is required.</div>
+            <div [hidden]="!editForm.controls['email'].errors.patternInvalid">Email is invalid.</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container [ngClass]="{'error': editForm.controls['phone'].errors && !editForm.controls['phone'].pristine}">
+          <input id="phone" type="text" mdInput [(ngModel)]="user.phone" formControlName="phone" placeholder="User Phone">
+          <div *ngIf="editForm.controls['phone'].errors && !editForm.controls['phone'].pristine" class="error-msg">
+            <div [hidden]="!editForm.controls['phone'].errors.required">Email is required.</div>
+            <div [hidden]="!editForm.controls['phone'].errors.patternInvalid">Email is invalid.</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container [ngClass]="{'error': editForm.controls['company'].errors && !editForm.controls['company'].pristine}">
+          <input id="company" type="text" mdInput [(ngModel)]="user.company.name" formControlName="company" placeholder="User Company Name">
+          <div *ngIf="editForm.controls['company'].errors && !editForm.controls['company'].pristine" class="error-msg">
+            <div [hidden]="!editForm.controls['company'].errors.required">Email is required.</div>
+            <div [hidden]="!editForm.controls['company'].errors.patternInvalid">Email is invalid.</div>
+          </div>
+        </md-input-container>
+      </form>
+    </md-card-content>
+    <md-card-actions align="start">
+      <button  md-raised-button class="btn" [disabled]="editForm.invalid" (click)="saveUser(user)">Save User</button>
+    </md-card-actions>
+  </md-card>
+
+
+
+</div>
+

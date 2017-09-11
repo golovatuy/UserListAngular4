@@ -1,0 +1,7 @@
+<ul class="user-list">
+  <li class="list-item" *ngFor="let user of userList">
+    {{ user.name }}, <a href="mailto:{{ user.email }}" target="_blank">{{ user.email }}</a>
+
+    <a [routerLink]="['/view', user.id]">view</a>
+  </li>
+</ul>

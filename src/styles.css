@@ -1,0 +1,10 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.list-item {
+  list-style: none;
+  padding: 10px ;
+}
+
+.error {
+  color: red;
+}

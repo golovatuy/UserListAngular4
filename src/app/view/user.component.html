@@ -1,0 +1,11 @@
+<div>
+
+  <a [routerLink]="['/edit', user.id]">Edit user data</a>
+
+  <ul class="">
+    <li class="list-item">User name  {{ user.name }}</li>
+    <li class="list-item">User email  {{ user.email }}</li>
+    <li class="list-item">User phone  {{ user.phone }}</li>
+    <li class="list-item">User company  {{ user.company.name }}</li>
+  </ul>
+</div>
